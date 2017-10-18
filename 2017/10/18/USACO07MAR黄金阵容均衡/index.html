@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="字典序,巧妙," />
+  <meta name="keywords" content="前缀和,巧妙," />
 
 
 
@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="Description 有$N(1\le N\le 10^5)$天，$M(1\le M\le 30)$种能力值。每一天可能有几种能力值+1。一段时期内若每种能力值都增加相同的量则称为均衡的，求最长的均衡时期。">
-<meta name="keywords" content="字典序,巧妙">
+<meta name="description" content="Description有$N(1\le N\le 10^5)$天，$M(1\le M\le 30)$种能力值。每一天可能有几种能力值+1。一段时期内若每种能力值都增加相同的量则称为均衡的，求最长的均衡时期。">
+<meta name="keywords" content="前缀和,巧妙">
 <meta property="og:type" content="article">
 <meta property="og:title" content="USACO07MAR黄金阵容均衡">
 <meta property="og:url" content="http://blog.csdn.net/wt_cnyali/2017/10/18/USACO07MAR黄金阵容均衡/index.html">
 <meta property="og:site_name" content="狗报纸的表演中心">
-<meta property="og:description" content="Description 有$N(1\le N\le 10^5)$天，$M(1\le M\le 30)$种能力值。每一天可能有几种能力值+1。一段时期内若每种能力值都增加相同的量则称为均衡的，求最长的均衡时期。">
+<meta property="og:description" content="Description有$N(1\le N\le 10^5)$天，$M(1\le M\le 30)$种能力值。每一天可能有几种能力值+1。一段时期内若每种能力值都增加相同的量则称为均衡的，求最长的均衡时期。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-18T14:27:12.044Z">
+<meta property="og:updated_time" content="2017-10-18T14:41:31.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="USACO07MAR黄金阵容均衡">
-<meta name="twitter:description" content="Description 有$N(1\le N\le 10^5)$天，$M(1\le M\le 30)$种能力值。每一天可能有几种能力值+1。一段时期内若每种能力值都增加相同的量则称为均衡的，求最长的均衡时期。">
+<meta name="twitter:description" content="Description有$N(1\le N\le 10^5)$天，$M(1\le M\le 30)$种能力值。每一天可能有几种能力值+1。一段时期内若每种能力值都增加相同的量则称为均衡的，求最长的均衡时期。">
 
 
 
@@ -345,11 +345,17 @@
 
       
         <ul>
-<li>Description 有$N(1\le N\le 10^5)$天，$M(1\le M\le 30)$种能力值。每一天可能有几种能力值+1。一段时期内若每种能力值都增加相同的量则称为均衡的，求最长的均衡时期。<a id="more"></a></li>
-<li>Solution</li>
-<li></li>
+<li>Description<br>有$N(1\le N\le 10^5)$天，$M(1\le M\le 30)$种能力值。每一天可能有几种能力值+1。一段时期内若每种能力值都增加相同的量则称为均衡的，求最长的均衡时期。<a id="more"></a></li>
+<li>Solution<ul>
+<li>记个前缀和，方便快速询问。</li>
+<li><del>我的思路就此打止了</del>，我真是太弱了</li>
+<li>如果第 $a+1$ 天到第$b$天这段时期是均衡的，那么有 $ \forall_{i=1}^{M} day[b][i]-day[a][i] = k (k为常数) $</li>
+<li>接着又可以发现，记 $s[i][j] = day[i][j]-day[i][1]$ ，那么有$\forall_{i=1}^{M}s[b][i] = s[a][i]$</li>
+<li>找这些相同的东西统计答案就行了，可以先用字典序先排一下。</li>
 </ul>
-
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</div><div class="line">void Read ( int &amp;x, char c = getchar(), bool f = 0 )&#123;</div><div class="line">    <span class="keyword">for</span> ( x = <span class="number">0</span> ; !<span class="built_in">isdigit</span>(c) ; c = getchar() ) <span class="keyword">if</span> (c == <span class="string">'-'</span>) f = <span class="number">1</span> ;</div><div class="line">    <span class="keyword">for</span> ( ; <span class="built_in">isdigit</span>(c) ; c = getchar() ) x = <span class="number">10</span>*x + c - <span class="string">'0'</span> ;</div><div class="line">    <span class="keyword">if</span> (f) x = -x ;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>, maxm = <span class="number">35</span> ;</div><div class="line"><span class="keyword">int</span> n, m, a[maxn][maxm] ;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></div><div class="line">    <span class="keyword">int</span> id, t[maxm] ;</div><div class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; ( node a, node b ) &#123;</div><div class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= m ; i ++ )</div><div class="line">            <span class="keyword">if</span> ( a.t[i] != b.t[i] ) <span class="keyword">return</span> a.t[i] &lt; b.t[i] ;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> i = m ; i ; i -- )</div><div class="line">            t[i] -= t[<span class="number">1</span>] ;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> == ( node a, node b ) &#123;</div><div class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= m ; i ++ )</div><div class="line">            <span class="keyword">if</span> (a.t[i] != b.t[i]) <span class="keyword">return</span> <span class="literal">false</span> ;</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span> ;</div><div class="line">    &#125;</div><div class="line">&#125; s[maxn] ;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUGDE</span></div><div class="line">    freopen ( <span class="string">"P1360.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span> ) ;</div><div class="line">    freopen ( <span class="string">"P1360.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span> ) ;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">    <span class="keyword">int</span> i, j, k, x ;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>, l = n, r = <span class="number">0</span> ; </div><div class="line">    Read(n) ; Read(m) ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ ) &#123;</div><div class="line">        Read(x) ;</div><div class="line">        <span class="keyword">for</span> ( j = <span class="number">1</span> ; j &lt;= m ; j ++, x &gt;&gt;= <span class="number">1</span> ) a[i][j] = x&amp;<span class="number">1</span> ;</div><div class="line">        <span class="keyword">bool</span> fg = <span class="number">1</span> ;</div><div class="line">        <span class="keyword">for</span> ( j = <span class="number">2</span> ; j &lt;= m ; j ++ )</div><div class="line">            <span class="keyword">if</span> ( a[i][j] != a[i][j<span class="number">-1</span>] ) fg = <span class="number">0</span> ;</div><div class="line">        <span class="keyword">if</span> (fg) ans = <span class="number">1</span> ;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ )</div><div class="line">        <span class="keyword">for</span> ( j = <span class="number">1</span> ; j &lt;= m ; j ++ )</div><div class="line">            s[i].t[j] = s[i - <span class="number">1</span>].t[j] + a[i][j] ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ ) s[i].init(), s[i].id = i ;</div><div class="line">    sort(s, s+n+<span class="number">1</span>) ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ ) &#123;</div><div class="line">        <span class="keyword">if</span> (s[i] == s[i <span class="number">-1</span>]) &#123;</div><div class="line">            l = min(l, s[i].id) ;</div><div class="line">            r = max(r, s[i].id) ;</div><div class="line">            ans = max(r-l, ans) ;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            l = s[i].id ;</div><div class="line">            r = s[i].id ;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span> ( <span class="string">"%d\n"</span>, ans ) ;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -366,7 +372,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/字典序/" rel="tag"># 字典序</a>
+            <a href="/tags/前缀和/" rel="tag"># 前缀和</a>
           
             <a href="/tags/巧妙/" rel="tag"># 巧妙</a>
           
@@ -391,8 +397,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/18/USACO07MAR黄金阵容均衡/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/18/USACO08OCT打井WateringHole/" rel="prev" title="USACO08OCT打井WateringHole">
+                USACO08OCT打井WateringHole <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -472,7 +478,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
