@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="This page you see is belong to gbzzhang2222, who is the most talented people in acting.">
+<meta name="description" content="DescriptionJohn决定将水引入到他的$N(1\le N\le 300)$个牧场。他准备通过挖若干井，并在各块田中修筑水道来连通各块田地以供水。在第$i$田中挖一口井需要花费 $ W_i (1\le W_i \le 10^5) $ 元。连接$i$号田与$j$号田需要 $ P_{ij} (1\le P_{ij} \le 10^5) $ 元。请求出农民John 需要为连通整个牧场的每一块田">
 <meta name="keywords" content="图论,最小生成树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="USACO08OCT打井WateringHole">
 <meta property="og:url" content="http://blog.csdn.net/wt_cnyali/2017/10/18/USACO08OCT打井WateringHole/index.html">
 <meta property="og:site_name" content="狗报纸的表演中心">
-<meta property="og:description" content="This page you see is belong to gbzzhang2222, who is the most talented people in acting.">
+<meta property="og:description" content="DescriptionJohn决定将水引入到他的$N(1\le N\le 300)$个牧场。他准备通过挖若干井，并在各块田中修筑水道来连通各块田地以供水。在第$i$田中挖一口井需要花费 $ W_i (1\le W_i \le 10^5) $ 元。连接$i$号田与$j$号田需要 $ P_{ij} (1\le P_{ij} \le 10^5) $ 元。请求出农民John 需要为连通整个牧场的每一块田">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-18T14:42:56.118Z">
+<meta property="og:updated_time" content="2017-10-18T14:55:06.536Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="USACO08OCT打井WateringHole">
-<meta name="twitter:description" content="This page you see is belong to gbzzhang2222, who is the most talented people in acting.">
+<meta name="twitter:description" content="DescriptionJohn决定将水引入到他的$N(1\le N\le 300)$个牧场。他准备通过挖若干井，并在各块田中修筑水道来连通各块田地以供水。在第$i$田中挖一口井需要花费 $ W_i (1\le W_i \le 10^5) $ 元。连接$i$号田与$j$号田需要 $ P_{ij} (1\le P_{ij} \le 10^5) $ 元。请求出农民John 需要为连通整个牧场的每一块田">
 
 
 
@@ -344,7 +344,30 @@
       
 
       
-        
+        <ul>
+<li>Description<br>John决定将水引入到他的$N(1\le N\le 300)$个牧场。<br>他准备通过挖若干井，并在各块田中修筑水道来连通各块田地以供水。<br>在第$i$田中挖一口井需要花费 $ W_i (1\le W_i \le 10^5) $ 元。<br>连接$i$号田与$j$号田需要 $ P_{ij} (1\le P_{ij} \le 10^5) $ 元。<br>请求出农民John 需要为连通整个牧场的每一块田地所需要的钱数。</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p><del>这个题好普</del></p>
+</li>
+<li><p>Solution1</p>
+<ul>
+<li>每个点加供水系统有两种做法，连接某个已经在系统中的点，或者新建一个水井。</li>
+<li>新建一个超级源点，向所有点连边权为建水井花费的边。</li>
+<li>对于这$N+1$个点直接做MST即可。</li>
+<li>时间复杂度$O(MST)$</li>
+</ul>
+</li>
+<li><p>Solution2</p>
+<ul>
+<li>类似Prim的方法？</li>
+<li>欺负数据范围，直接枚举哪个点必须放。</li>
+<li>时间复杂度$O(N^3)$</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</div><div class="line">void Read ( int &amp;x, char c = getchar() ) &#123;</div><div class="line">    <span class="keyword">for</span> ( x = <span class="number">0</span> ; !<span class="built_in">isdigit</span>(c) ; c = getchar() ) ;</div><div class="line">    <span class="keyword">for</span> ( ; <span class="built_in">isdigit</span>(c) ; c = getchar() ) x = <span class="number">10</span>*x + c - <span class="string">'0'</span> ;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">305</span>, zhf = <span class="number">1</span>&lt;&lt;<span class="number">29</span> ;</div><div class="line"><span class="keyword">int</span> n, m, w[maxn], dis[maxn], g[maxn][maxn] ;</div><div class="line"><span class="keyword">bool</span> inq[maxn] ;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span> <span class="params">( <span class="keyword">int</span> x )</span> </span>&#123;</div><div class="line">    <span class="built_in">memset</span> ( inq, <span class="number">0</span>, <span class="keyword">sizeof</span> inq ) ;</div><div class="line">    <span class="keyword">int</span> i, j, minn, rec = <span class="number">0</span> ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ )</div><div class="line">        <span class="keyword">if</span> ( i != x ) dis[i] = min(g[x][i], w[i]) ;</div><div class="line">        <span class="keyword">else</span> dis[i] = w[i] ;</div><div class="line">    <span class="comment">//printf ( "start : %d\n", x ) ;</span></div><div class="line">    inq[x] = <span class="number">1</span> ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">2</span> ; i &lt;= n ; i ++ ) &#123;</div><div class="line">        minn = zhf ;</div><div class="line">        <span class="keyword">for</span> ( j = <span class="number">1</span> ; j &lt;= n ; j ++ )</div><div class="line">            <span class="keyword">if</span> ( !inq[j] &amp;&amp; dis[j] &lt; minn ) &#123;</div><div class="line">                minn = dis[j] ;</div><div class="line">                x = j ;</div><div class="line">            &#125;</div><div class="line">        inq[x] = <span class="number">1</span> ;</div><div class="line">        <span class="comment">//printf ( "insert %d dis=%d\n", x, dis[x] ) ;</span></div><div class="line">        rec += dis[j] ;</div><div class="line">        <span class="keyword">for</span> ( j = <span class="number">1</span> ; j &lt;= n ; j ++ )</div><div class="line">            <span class="keyword">if</span> ( !inq[j] ) dis[j] = min(dis[j], g[x][j]) ;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ ) rec += dis[i] ;</div><div class="line">    <span class="comment">//for ( i = 1 ; i &lt;= n ; i ++ ) printf ( "%d ", dis[i] ) ; printf ( "rec=%d\n", rec ) ;</span></div><div class="line">    <span class="keyword">return</span> rec ;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></div><div class="line">    freopen ( <span class="string">"P1550.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span> ) ;</div><div class="line">    freopen ( <span class="string">"P1550.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span> ) ;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">    <span class="keyword">int</span> i, j, ans = zhf ;</div><div class="line">    Read(n) ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ ) Read(w[i]) ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ )</div><div class="line">        <span class="keyword">for</span> ( j = <span class="number">1</span> ; j &lt;= n ; j ++ )</div><div class="line">            Read(g[i][j]) ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ )</div><div class="line">        ans = min(ans, calc(i)) ;</div><div class="line">    <span class="built_in">printf</span> ( <span class="string">"%d\n"</span>, ans ) ;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
