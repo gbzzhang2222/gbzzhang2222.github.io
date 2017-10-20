@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="图论,最短路," />
+  <meta name="keywords" content="质因数分解," />
 
 
 
@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="题意有$N (1 \le N \le 10000)$个点，$M(1 \le M \le 50000)$条边的无向图。可以使$K$条边的边权变成0，求点$1$到点$N$的最短距离。">
-<meta name="keywords" content="图论,最短路">
+<meta name="description" content="Description 求$n!$在$k$进制下后缀$0$的个数.">
+<meta name="keywords" content="质因数分解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="USACO09FEB改造路Revamping Trails">
-<meta property="og:url" content="http://blog.csdn.net/wt_cnyali/2017/10/03/USACO09FEB改造路RevampingTrails/index.html">
+<meta property="og:title" content="洛谷10月月赛R1·浴谷八连测R1·提高组 SAC E#1 - 一道中档题 Factorial">
+<meta property="og:url" content="http://blog.csdn.net/wt_cnyali/2017/10/07/LG201710T1/index.html">
 <meta property="og:site_name" content="狗报纸的表演中心">
-<meta property="og:description" content="题意有$N (1 \le N \le 10000)$个点，$M(1 \le M \le 50000)$条边的无向图。可以使$K$条边的边权变成0，求点$1$到点$N$的最短距离。">
+<meta property="og:description" content="Description 求$n!$在$k$进制下后缀$0$的个数.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-03T15:27:06.208Z">
+<meta property="og:updated_time" content="2017-10-20T15:28:33.675Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="USACO09FEB改造路Revamping Trails">
-<meta name="twitter:description" content="题意有$N (1 \le N \le 10000)$个点，$M(1 \le M \le 50000)$条边的无向图。可以使$K$条边的边权变成0，求点$1$到点$N$的最短距离。">
+<meta name="twitter:title" content="洛谷10月月赛R1·浴谷八连测R1·提高组 SAC E#1 - 一道中档题 Factorial">
+<meta name="twitter:description" content="Description 求$n!$在$k$进制下后缀$0$的个数.">
 
 
 
@@ -164,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.csdn.net/wt_cnyali/2017/10/03/USACO09FEB改造路RevampingTrails/"/>
+  <link rel="canonical" href="http://blog.csdn.net/wt_cnyali/2017/10/07/LG201710T1/"/>
 
 
 
 
 
-  <title>USACO09FEB改造路Revamping Trails | 狗报纸的表演中心</title>
+  <title>洛谷10月月赛R1·浴谷八连测R1·提高组 SAC E#1 - 一道中档题 Factorial | 狗报纸的表演中心</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.csdn.net/wt_cnyali/2017/10/03/USACO09FEB改造路RevampingTrails/">
+    <link itemprop="mainEntityOfPage" href="http://blog.csdn.net/wt_cnyali/2017/10/07/LG201710T1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="gbzzhang2222">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">USACO09FEB改造路Revamping Trails</h1>
+          <h1 class="post-title" itemprop="name headline">洛谷10月月赛R1·浴谷八连测R1·提高组 SAC E#1 - 一道中档题 Factorial</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-03T23:01:14+08:00">
-                2017-10-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T21:24:00+08:00">
+                2017-10-07
               </time>
             
 
@@ -345,23 +345,14 @@
 
       
         <ul>
-<li>题意<br>有$N (1 \le N \le 10000)$个点，$M(1 \le M \le 50000)$条边的无向图。可以使$K$条边的边权变成0，求点$1$到点$N$的最短距离。</li>
+<li>Description 求$n!$在$k$进制下后缀$0$的个数.</li>
 </ul>
 <a id="more"></a>
+<p><del>老夫掐指一算，竟然掐到std算法？</del></p>
 <ul>
-<li><p>Solution</p>
-<ul>
-<li>设$dis[i][j]$代表到点$i$改造了$j$条路的最短路。</li>
-<li>数据卡spfa</li>
+<li>Solution<br>讲道理，刚开始看到这道题是不会做的。<br>但是老夫想想如果$m=10$还是会做的。<br>数数小于等于$n$有多少个5的倍数就行了。2的倍数绝对比5的倍数多嘛。<br>于是我就有了一点想法。<br>首先质因数分解少不了的。$m = \sum_{i = 1}^k s_i^{cnt_i}$<br>然后，对于每个质因数$s_i$，算一算$[1,n]$能找到多少它的倍数（不过类似计算2时遇到$2^3$这些要算三次的）<br>怎么计算？容斥一下？应该只有我这种zz一开始这么想？<br>后来发现计算的时候每次加1就行了，因为前面的都已经计算过了。<br>算完之后，发现$s_i$在$[1,n]$中找到了$x_i$，但是出现一个$m$至少$s_i$要出现$cnt_i$次。所以最终答案就是$min_{i=1}^{k}{\frac{x_i}{cnt_i} }$</li>
 </ul>
-</li>
-<li><p>tips</p>
-<ul>
-<li>改成Dijkstra竟然还WA了一次，说明好久没写生疏了。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</div><div class="line">void Read ( int &amp;x, char c = getchar() ) &#123;</div><div class="line">	<span class="keyword">for</span> ( x = <span class="number">0</span> ; !<span class="built_in">isdigit</span>(c) ; c = getchar() )  ;</div><div class="line">	<span class="keyword">for</span> ( ; <span class="built_in">isdigit</span>(c) ; c = getchar() ) x = <span class="number">10</span>*x + c - <span class="string">'0'</span> ;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span>+<span class="number">5</span>, maxm = <span class="number">1e6</span>+<span class="number">5</span>, zhf = <span class="number">0x3f3f3f3f</span> ;</div><div class="line"><span class="keyword">int</span> n, m, cnt, e, Begin[maxn], Next[maxm], To[maxm], W[maxm] ;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span> <span class="params">( <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z )</span> </span>&#123;</div><div class="line">	To[++e] = y ;</div><div class="line">	Next[e] = Begin[x] ;</div><div class="line">	Begin[x] = e ;</div><div class="line">	W[e] = z ;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> dis[maxn][<span class="number">25</span>] ;</div><div class="line"><span class="keyword">bool</span> inq[maxn][<span class="number">25</span>] ;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></div><div class="line">	<span class="keyword">int</span> x, stp, dis ;</div><div class="line">	<span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; ( node a, node b ) &#123;</div><div class="line">		<span class="keyword">return</span> a.dis &gt; b.dis ;</div><div class="line">	&#125;</div><div class="line">&#125; ;</div><div class="line">priority_queue &lt;node&gt; Q ;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Dijkstra</span><span class="params">( <span class="keyword">int</span> x )</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> i, j, u ;</div><div class="line">	<span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ )</div><div class="line">		<span class="keyword">for</span> ( j = <span class="number">0</span> ; j &lt;= cnt ; j ++ )</div><div class="line">		dis[i][j] = zhf ;</div><div class="line">	dis[x][<span class="number">0</span>] = <span class="number">0</span> ;</div><div class="line">	Q.push( (node)&#123;x, <span class="number">0</span>, <span class="number">0</span>&#125; ) ;</div><div class="line">	node t ;</div><div class="line">	<span class="keyword">while</span> ( !Q.empty() ) &#123;</div><div class="line">		t = Q.top() ;</div><div class="line">		Q.pop() ;</div><div class="line">		x = t.x ;</div><div class="line">		<span class="keyword">if</span> ( inq[x][t.stp] ) <span class="keyword">continue</span> ;</div><div class="line">		inq[x][t.stp] = <span class="number">1</span> ;</div><div class="line">		<span class="keyword">for</span> ( i = Begin[x] ; i ; i = Next[i] ) &#123;</div><div class="line">			u = To[i] ;</div><div class="line">			<span class="keyword">for</span> ( j = <span class="number">0</span> ; j &lt;= cnt ; j ++ ) &#123;</div><div class="line">				<span class="keyword">if</span> ( dis[u][j] &gt; dis[x][j] + W[i] ) &#123;</div><div class="line">					dis[u][j] = dis[x][j] + W[i] ;</div><div class="line">					Q.push( (node)&#123;u, j, dis[u][j]&#125; ) ;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> ( j &lt; cnt &amp;&amp; dis[u][j+<span class="number">1</span>] &gt; dis[x][j] ) &#123;</div><div class="line">					dis[u][j+<span class="number">1</span>] = dis[x][j] ;</div><div class="line">					Q.push( (node)&#123;u, j+<span class="number">1</span>, dis[u][j+<span class="number">1</span>]&#125; ) ;</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span> ( <span class="string">"%d\n"</span>, dis[n][cnt] ) ;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> i, x, y, z ;</div><div class="line">	Read(n) ; Read(m) ; Read(cnt) ;</div><div class="line">	<span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= m ; i ++ ) &#123;</div><div class="line">		Read(x) ; Read(y) ; Read(z) ;</div><div class="line">		add ( x, y, z ) ;</div><div class="line">		add ( y, x, z ) ;</div><div class="line">	&#125;</div><div class="line">	Dijkstra(<span class="number">1</span>) ;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span> ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> LL long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</div><div class="line">LL n, m, tot ;</div><div class="line">LL s[<span class="number">1010</span>], cnt[<span class="number">1010</span>] ;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></div><div class="line">    freopen ( <span class="string">"a.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span> ) ;</div><div class="line">    freopen ( <span class="string">"a.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span> ) ;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div><div class="line">    LL i, j, x, ans, gn ;</div><div class="line">    <span class="keyword">while</span> ( <span class="built_in">scanf</span> ( <span class="string">"%lld%lld"</span>, &amp;n, &amp;m ) != EOF ) &#123;</div><div class="line">        <span class="built_in">memset</span> ( s, <span class="number">0</span>, <span class="keyword">sizeof</span> s ) ;</div><div class="line">        <span class="built_in">memset</span> ( cnt, tot = <span class="number">0</span>, <span class="keyword">sizeof</span> cnt ) ;</div><div class="line">        <span class="keyword">for</span> ( x = m, i = <span class="number">2</span> ; i*i &lt;= x ; i ++ ) &#123;</div><div class="line">            <span class="keyword">if</span> (x%i == <span class="number">0</span>) s[++tot] = i ;</div><div class="line">            <span class="keyword">while</span> (x%i == <span class="number">0</span>) cnt[tot] ++, x /= i ;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (x != <span class="number">1</span>) s[++tot] = x, cnt[tot] = <span class="number">1</span> ;    </div><div class="line">        <span class="comment">/*printf ( "%lld = ", m ) ;</span></div><div class="line"><span class="comment">        for ( i = 1 ; i &lt; tot ; i ++ ) printf ( "%lld^%lld + ", s[i], cnt[i] ) ;</span></div><div class="line"><span class="comment">        printf ( "%lld^%lld\n", s[tot], cnt[tot] ) ;*/</span></div><div class="line">        ans = <span class="number">1L</span>L&lt;&lt;<span class="number">60</span> ;</div><div class="line">        <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= tot ; i ++ ) &#123;</div><div class="line">            gn = <span class="number">1</span> ;    </div><div class="line">            x = <span class="number">0</span> ; </div><div class="line">            <span class="keyword">for</span> ( j = <span class="number">1</span> ; gn &lt;= n ; j ++ ) &#123;</div><div class="line">                gn *= s[i] ;</div><div class="line">                x += n/gn ;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//printf ( "time %lld = %lld\n", s[i], x ) ;    </span></div><div class="line">            ans = min(ans, x/cnt[i]) ;  </div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span> ( <span class="string">"%lld\n"</span>, ans ) ;  </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -378,9 +369,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/图论/" rel="tag"># 图论</a>
-          
-            <a href="/tags/最短路/" rel="tag"># 最短路</a>
+            <a href="/tags/质因数分解/" rel="tag"># 质因数分解</a>
           
         </div>
       
@@ -393,8 +382,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/29/USACO09FEB庙会班车FairShuttle/" rel="next" title="USACO09FEB 庙会班车 Fair Shuttle">
-                <i class="fa fa-chevron-left"></i> USACO09FEB 庙会班车 Fair Shuttle
+              <a href="/2017/10/03/USACO09FEB改造路RevampingTrails/" rel="next" title="USACO09FEB改造路Revamping Trails">
+                <i class="fa fa-chevron-left"></i> USACO09FEB改造路Revamping Trails
               </a>
             
           </div>
@@ -403,8 +392,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/07/LG201710T1/" rel="prev" title="洛谷10月月赛R1·浴谷八连测R1·提高组 SAC E#1 - 一道中档题 Factorial">
-                洛谷10月月赛R1·浴谷八连测R1·提高组 SAC E#1 - 一道中档题 Factorial <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/18/USACO07MAR黄金阵容均衡/" rel="prev" title="USACO07MAR黄金阵容均衡">
+                USACO07MAR黄金阵容均衡 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
