@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="三分,贪心," />
+  <meta name="keywords" content="数学,欧拉函数," />
 
 
 
@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="题意餐巾计划问题（费用流经典题），数据加强（$1 \le N \le 10^5$）。">
-<meta name="keywords" content="三分,贪心">
+<meta name="description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。$$ \phi(x) = \sum_{i=1}^{n}[(x,i)=1] $$">
+<meta name="keywords" content="数学,欧拉函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="USACO08NOV玩具Toys">
-<meta property="og:url" content="http://blog.csdn.net/wt_cnyali/2017/09/22/USACO08NOV-玩具Toys/index.html">
+<meta property="og:title" content="欧拉函数">
+<meta property="og:url" content="http://blog.csdn.net/wt_cnyali/2017/10/25/欧拉函数/index.html">
 <meta property="og:site_name" content="狗报纸的表演中心">
-<meta property="og:description" content="题意餐巾计划问题（费用流经典题），数据加强（$1 \le N \le 10^5$）。">
+<meta property="og:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。$$ \phi(x) = \sum_{i=1}^{n}[(x,i)=1] $$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-28T14:07:50.000Z">
+<meta property="og:updated_time" content="2017-10-26T15:03:17.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="USACO08NOV玩具Toys">
-<meta name="twitter:description" content="题意餐巾计划问题（费用流经典题），数据加强（$1 \le N \le 10^5$）。">
+<meta name="twitter:title" content="欧拉函数">
+<meta name="twitter:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。$$ \phi(x) = \sum_{i=1}^{n}[(x,i)=1] $$">
 
 
 
@@ -164,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.csdn.net/wt_cnyali/2017/09/22/USACO08NOV-玩具Toys/"/>
+  <link rel="canonical" href="http://blog.csdn.net/wt_cnyali/2017/10/25/欧拉函数/"/>
 
 
 
 
 
-  <title>USACO08NOV玩具Toys | 狗报纸的表演中心</title>
+  <title>欧拉函数 | 狗报纸的表演中心</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.csdn.net/wt_cnyali/2017/09/22/USACO08NOV-玩具Toys/">
+    <link itemprop="mainEntityOfPage" href="http://blog.csdn.net/wt_cnyali/2017/10/25/欧拉函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="gbzzhang2222">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">USACO08NOV玩具Toys</h1>
+          <h1 class="post-title" itemprop="name headline">欧拉函数</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T22:16:09+08:00">
-                2017-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-25T22:29:56+08:00">
+                2017-10-25
               </time>
             
 
@@ -344,20 +344,16 @@
       
 
       
-        <ul>
-<li>题意<br>餐巾计划问题（费用流经典题），数据加强（$1 \le N \le 10^5$）。</li>
-</ul>
+        <p>一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。<br>$$ \phi(x) = \sum_{i=1}^{n}[(x,i)=1] $$</p>
 <a id="more"></a>
-<ul>
-<li><p>Solution<br>设$f(x)$代表购买$x$个新玩具所需要的最小花费，那么$f$是一个单峰的函数，可以使用三分法求解。<br>$f(x)$可以通过贪心的方法求出，这个稍后详细介绍。</p>
-</li>
-<li><p>接下来简单说明一下这个单峰。假设当$x=t$时有最优解$f(t)$。若取$x = t+1$，那么就会多了一个新买的玩具没有用，浪费了，不会出现更优解，不难发现当$x = t + k ( k \in N^* )$，该结论均成立；若取$x = t - 1$，考虑使用费用流求解时，也就是有有一条在最短路上的边没有走，可能走的是其他最短路径或者次短路，也不会出现更优解，$x = t-k$时类似。</p>
+<h1 id="欧拉函数的计算"><a href="#欧拉函数的计算" class="headerlink" title="欧拉函数的计算"></a>欧拉函数的计算</h1><ul>
+<li>若$x$是质数，$\phi(x) = x-1$</li>
+<li>进一步，若$x = a^p$ ( $a$是质数)<br>不难发现，如果某数不包含$a$这个质因子，那么一定与$x$互质，而$\forall a^i \ (1 \le i \lt p)$都包含$a$，减去即可。$\phi(x) = a^p-a^{p-1} = a^p(1-\frac{1}{a})$</li>
+<li><p>进而，设$x = \sum_{i=1}^{m}{p_i^{a_i}}$，由于欧拉函数是积性函数(在后面给出证明)，所以得出计算式<br>$$<br>\begin{equation}<br>\phi(x) = \quad<br>\Pi_{i=1}^{m}{\phi(p_i^{a_i})} = \quad<br>\Pi_{i=1}^{m}{p_i^{a_i} \times (1-\frac{1}{p_i})} = \quad<br>x \ \Pi_{i=1}^{m}{1-\frac{1}{p_i}}<br>\end{equation}<br>$$</p>
+<h1 id="欧拉函数是积性函数"><a href="#欧拉函数是积性函数" class="headerlink" title="欧拉函数是积性函数"></a>欧拉函数是积性函数</h1><p>已知$(n,m)=1$，求证$\phi(nm)=\phi(n) \times \phi(m)$<br>不妨绘制一张如下的表格<br>$$<br>\begin{matrix}<br>1 &amp; 2 &amp; \cdots &amp; r &amp; \cdots &amp; m \\<br>m+1 &amp; m+2 &amp; \cdots &amp; m+r &amp; \cdots &amp; 2*m \\<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>(n-t)m+1 &amp; (n-t)m+2 &amp; \cdots &amp; (n-t)m+r &amp; \cdots &amp; (n-t+1)m \\<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>(n-1)m+1 &amp; (n-1)m+2 &amp; \cdots &amp; (n-1)m+r &amp; \cdots &amp; nm \\<br>\end{matrix}<br>$$<br>求这张表格里与$nm$互质的数的个数。<br>不难发现，每一行对$m$取模的结果构成了$0$ ~ $m-1$的一个排列，每一列对$n$取模的结果构成了$0$ ~ $n-1$的一个排列。<br>所以，与$nm$互质的数只存在于共$\phi(m)$行模$m$余数与$m$互质的行里，且在共$\phi(n)$列模$n$余数与$n$互质的列里。<br>共$\phi(n) \times \phi(m)$个数。</p>
 </li>
 </ul>
-<ul>
-<li>然后说说贪心法计算$f(x)$。为了方便描述，不妨设$c1 \le c2$不难发现，当前所需要的玩具，首先应该考虑已经购买但是还没有使用的新玩具，因为额外花费为0；在这之后，再考虑便宜点的$c1$，而且是离当前越近越好，因为再往前的天数可能没有足够的脏玩具用来洗；最后再考虑贵的$c2$，这时候应该离当前越远越好，因为越往前靠的话，洗好的玩具就有更大的机会用来用$c1$洗，可以为以后减少花费。</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</div><div class="line">void Read ( int &amp;x, char c = getchar() ) &#123;</div><div class="line">    <span class="keyword">for</span> ( x = <span class="number">0</span> ; !<span class="built_in">isdigit</span>(c) ; c = getchar() ) ;</div><div class="line">    <span class="keyword">for</span> ( ; <span class="built_in">isdigit</span>(c) ; c = getchar() ) x = <span class="number">10</span>*x + c - <span class="string">'0'</span> ;</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">5</span>, zhf = <span class="number">0x3f3f3f3f</span> ;</div><div class="line"><span class="keyword">int</span> n, m, t[maxn], s[maxn], tc, n1, n2, c1, c2 ;</div><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></div><div class="line">    <span class="keyword">int</span> id, val ;</div><div class="line">&#125; ;</div><div class="line"><span class="built_in">deque</span> &lt;node&gt; Q ;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">calc</span> <span class="params">( <span class="keyword">int</span> x )</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> rec = (tc - c2)*x, i, k ;</div><div class="line">    node tmp ;</div><div class="line">    Q.clear() ;</div><div class="line">    Q.push_front( (node)&#123;-n2, x&#125; ) ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ ) &#123;</div><div class="line">        m = t[i] ;</div><div class="line">        <span class="keyword">if</span> ( i - n1 &gt;= <span class="number">1</span> ) Q.push_front( (node)&#123;i - n1, t[i - n1]&#125; ) ; </div><div class="line">        <span class="keyword">while</span>(m) &#123;</div><div class="line">            <span class="keyword">if</span> ( Q.empty() ) <span class="keyword">return</span> zhf ;</div><div class="line">            tmp = Q.back() ;</div><div class="line">            <span class="keyword">if</span> ( tmp.id + n2 &lt;= i &amp;&amp; c1 &gt; c2 ) &#123;</div><div class="line">                k = min(m, tmp.val) ;</div><div class="line">                m -= k ; tmp.val -= k ;</div><div class="line">                rec += k*c2 ;</div><div class="line">                Q.pop_back() ;</div><div class="line">                <span class="keyword">if</span> ( tmp.val ) Q.push_back(tmp) ;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                tmp = Q.front() ;</div><div class="line">                k = min(m, tmp.val) ;</div><div class="line">                m -= k ; tmp.val -= k ;</div><div class="line">                rec += k*c1 ;</div><div class="line">                Q.pop_front() ;</div><div class="line">                <span class="keyword">if</span> ( tmp.val ) Q.push_front(tmp) ;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> rec ;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> i, k, l = <span class="number">1</span>, r = <span class="number">0</span>, mid1, mid2 ;</div><div class="line">    Read(n) ; Read(n1) ; Read(n2) ; Read(c1) ; Read(c2) ; Read(tc) ;</div><div class="line">    <span class="keyword">if</span> ( n1 &gt; n2 ) swap(n1, n2), swap(c1, c2) ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">1</span> ; i &lt;= n ; i ++ ) &#123;</div><div class="line">        Read(t[i]) ;</div><div class="line">        r += t[i] ;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">while</span> ( r - l &gt; <span class="number">20</span> ) &#123;</div><div class="line">        mid1 = (l*<span class="number">2</span> + r)/<span class="number">3</span> ;</div><div class="line">        mid2 = (l + r*<span class="number">2</span>)/<span class="number">3</span> ;</div><div class="line">        <span class="keyword">if</span> ( calc(mid1) &gt;= calc(mid2) ) l = mid1 ;</div><div class="line">        <span class="keyword">else</span> r = mid2 ;</div><div class="line">    &#125;</div><div class="line">    k = zhf ;</div><div class="line">    <span class="keyword">for</span> ( i = l ; i &lt;= r ; i ++ )</div><div class="line">        k = min(k, calc(i)) ;    </div><div class="line">    <span class="built_in">printf</span> ( <span class="string">"%d\n"</span>, k ) ;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>线性筛欧拉函数的代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n, m, cnt, phi[maxn], pr[maxn] ;</div><div class="line"><span class="keyword">bool</span> isp[maxn] ;</div><div class="line"><span class="keyword">void</span> _init() &#123;</div><div class="line">    <span class="keyword">int</span> i, j ;</div><div class="line">    <span class="built_in">memset</span> ( isp, <span class="number">1</span>, <span class="keyword">sizeof</span> isp ) ;</div><div class="line">    isp[<span class="number">1</span>] = <span class="number">0</span> ;</div><div class="line">    phi[<span class="number">1</span>] = <span class="number">1</span> ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">2</span> ; i &lt; maxn ; i ++ ) &#123;</div><div class="line">        <span class="keyword">if</span> (isp[i]) &#123;</div><div class="line">            phi[i] = i<span class="number">-1</span> ;</div><div class="line">            pr[++cnt] = i ;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span> ( j = <span class="number">1</span> ; j &lt;= cnt &amp;&amp; pr[j]*i &lt; maxn ; j ++ ) &#123;</div><div class="line">            isp[i*pr[j]] = <span class="number">0</span> ;</div><div class="line">            <span class="keyword">if</span> (i%pr[j]) phi[i*pr[j]] = phi[i]*phi[pr[j]] ;</div><div class="line">            <span class="keyword">else</span> &#123;</div><div class="line">                phi[i*pr[j]] = phi[i]*pr[j] ;</div><div class="line">                <span class="keyword">break</span> ; </div><div class="line">            &#125; </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -375,9 +371,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/三分/" rel="tag"># 三分</a>
+            <a href="/tags/数学/" rel="tag"># 数学</a>
           
-            <a href="/tags/贪心/" rel="tag"># 贪心</a>
+            <a href="/tags/欧拉函数/" rel="tag"># 欧拉函数</a>
           
         </div>
       
@@ -390,15 +386,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/10/24/CRT/" rel="next" title="中国剩余定理">
+                <i class="fa fa-chevron-left"></i> 中国剩余定理
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/23/USACO08NOV-奶牛混合起来MixedUpCows-洛谷2915/" rel="prev" title="USACO08NOV奶牛混合起来MixedUpCows-洛谷2915">
-                USACO08NOV奶牛混合起来MixedUpCows-洛谷2915 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -448,8 +444,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -502,6 +507,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#欧拉函数的计算"><span class="nav-number">1.</span> <span class="nav-text">欧拉函数的计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#欧拉函数是积性函数"><span class="nav-number">2.</span> <span class="nav-text">欧拉函数是积性函数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
