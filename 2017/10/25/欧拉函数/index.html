@@ -133,18 +133,18 @@
 
 
 
-<meta name="description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum\_{i=1}^{n}[(x,i)=1]">
+<meta name="description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum_{i=1}^{n}[(x,i)=1]">
 <meta name="keywords" content="数学,欧拉函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欧拉函数">
 <meta property="og:url" content="http://blog.csdn.net/wt_cnyali/2017/10/25/欧拉函数/index.html">
 <meta property="og:site_name" content="GoAway&#39;s Blog">
-<meta property="og:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum\_{i=1}^{n}[(x,i)=1]">
+<meta property="og:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum_{i=1}^{n}[(x,i)=1]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-02T17:32:56.505Z">
+<meta property="og:updated_time" content="2018-01-02T17:35:31.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="欧拉函数">
-<meta name="twitter:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum\_{i=1}^{n}[(x,i)=1]">
+<meta name="twitter:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum_{i=1}^{n}[(x,i)=1]">
 
 
 
@@ -355,7 +355,7 @@
 
       
         <p>一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。</p>
-<script type="math/tex; mode=display">\phi(x) = \sum\_{i=1}^{n}[(x,i)=1]</script><a id="more"></a>
+<script type="math/tex; mode=display">\phi(x) = \sum_{i=1}^{n}[(x,i)=1]</script><a id="more"></a>
 <h1 id="欧拉函数的计算"><a href="#欧拉函数的计算" class="headerlink" title="欧拉函数的计算"></a>欧拉函数的计算</h1><ul>
 <li>若$x$是质数，$\phi(x) = x-1$</li>
 <li>进一步，若$x = a^p$ ( $a$是质数)<br>不难发现，如果某数不包含$a$这个质因子，那么一定与$x$互质，而$\forall a^i \ (1 \le i \lt p)$都包含$a$，减去即可。$\phi(x) = a^p-a^{p-1} = a^p(1-\frac{1}{a})$</li>
@@ -363,9 +363,9 @@
 <script type="math/tex; mode=display">
 \begin{equation}
 \phi(x) = \quad
-\Pi_{i=1}^{m}{\phi(p\_i^{a\_i})} = \quad
-\Pi_{i=1}^{m}{p\_i^{a\_i} \times (1-\frac{1}{p\_i})} = \quad
-x \\ \Pi_{i=1}^{m}{1-\frac{1}{p\_i}}
+\Pi_{i=1}^{m}{\phi(p_i^{a_i})} = \quad
+\Pi_{i=1}^{m}{p_i^{a_i} \times (1-\frac{1}{p_i})} = \quad
+x \\ \Pi_{i=1}^{m}{1-\frac{1}{p_i}}
 \end{equation}</script><h1 id="欧拉函数是积性函数"><a href="#欧拉函数是积性函数" class="headerlink" title="欧拉函数是积性函数"></a>欧拉函数是积性函数</h1><p>已知$(n,m)=1$，求证$\phi(nm)=\phi(n) \times \phi(m)$<br>不妨绘制一张如下的表格</p>
 <script type="math/tex; mode=display">
 \begin{matrix}

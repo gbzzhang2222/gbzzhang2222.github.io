@@ -141,7 +141,7 @@
 <meta property="og:site_name" content="GoAway&#39;s Blog">
 <meta property="og:description" content="有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？——《孙子算经》">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-02T17:16:35.297Z">
+<meta property="og:updated_time" content="2018-01-02T17:35:56.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中国剩余定理">
 <meta name="twitter:description" content="有物不知其数，三三数之剩二，五五数之剩三，七七数之剩二。问物几何？——《孙子算经》">
@@ -360,15 +360,15 @@
 <h2 id="问题形式"><a href="#问题形式" class="headerlink" title="问题形式"></a>问题形式</h2><p>用式子来描述，CRT是用来解下列方程组的。<br>其中，$m_i$两两互质。</p>
 <script type="math/tex; mode=display">
 \begin{cases}
-    x& \equiv \\ a\_1 \\ ( \\ mod \\ m\_1 \\ ) \\\\
-    x& \equiv \\ a\_2 \\ ( \\ mod \\ m\_2 \\ ) \\\\
+    x& \equiv \\ a_1 \\ ( \\ mod \\ m_1 \\ ) \\\\
+    x& \equiv \\ a_2 \\ ( \\ mod \\ m_2 \\ ) \\\\
     &\cdots \\\\
-    x& \equiv \\ a\_n \\ ( \\ mod \\ m\_n \\ ) \\\\
+    x& \equiv \\ a_n \\ ( \\ mod \\ m_n \\ ) \\\\
 \end{cases}</script><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><p>首先，定义：</p>
 <script type="math/tex; mode=display">
-M = \Pi \\ m\_i \\\\
-M\_i = \frac{M}{m\_i}</script><p>$\because \quad m_i$ 两两互质<br>$\therefore \quad M_i \ u_i + m_i \ v_i = 1$ 有整数解<br>$\therefore \quad M_i \ u_i \equiv 1 \ ( \ mod \ m_i )$<br>$\therefore \quad u_i$是$M_i$在模$m_i$意义下的逆元<br>同余式左右同乘$a_i$，得<br>$a_i \ M_i \ u_i \equiv a_i \ ( \ mod \ m_i )$<br>$\therefore \quad x \equiv a_i \ M_i \ u_i \ ( \ mod \ m_i )$<br>得到结论：</p>
-<script type="math/tex; mode=display">x \equiv \sum\_{i=1}^{n} {a\_i \\ M\_i \\ u\_i} \\ ( \\ mod \\ M \\ )</script>
+M = \Pi \\ m_i \\\\
+M_i = \frac{M}{m_i}</script><p>$\because \quad m_i$ 两两互质<br>$\therefore \quad M_i \ u_i + m_i \ v_i = 1$ 有整数解<br>$\therefore \quad M_i \ u_i \equiv 1 \ ( \ mod \ m_i )$<br>$\therefore \quad u_i$是$M_i$在模$m_i$意义下的逆元<br>同余式左右同乘$a_i$，得<br>$a_i \ M_i \ u_i \equiv a_i \ ( \ mod \ m_i )$<br>$\therefore \quad x \equiv a_i \ M_i \ u_i \ ( \ mod \ m_i )$<br>得到结论：</p>
+<script type="math/tex; mode=display">x \equiv \sum_{i=1}^{n} {a_i \\ M_i \\ u_i} \\ ( \\ mod \\ M \\ )</script>
       
     </div>
     
