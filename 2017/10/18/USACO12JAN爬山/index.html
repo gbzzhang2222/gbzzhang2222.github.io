@@ -12,7 +12,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-
+<script>
+    (function(){
+        if('itismine123'){
+            if (prompt('请输入文章密码') !== 'itismine123'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+ 
 
 
 
@@ -131,7 +141,7 @@
 <meta property="og:site_name" content="GoAway&#39;s Blog">
 <meta property="og:description" content="Description$N (1\le N\le 25000)$头奶牛，第$i$头奶牛上山耗时$U_i$，下山耗时$D_i$。同一时刻最多只能有一头奶牛，下山也是。上山下山顺序可以不一样，求最后一头奶牛到达的最早时间。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-20T15:45:02.811Z">
+<meta property="og:updated_time" content="2018-01-02T17:17:08.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="USACO12JAN爬山">
 <meta name="twitter:description" content="Description$N (1\le N\le 25000)$头奶牛，第$i$头奶牛上山耗时$U_i$，下山耗时$D_i$。同一时刻最多只能有一头奶牛，下山也是。上山下山顺序可以不一样，求最后一头奶牛到达的最早时间。">

@@ -12,7 +12,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
-
+<script>
+    (function(){
+        if('itismine123'){
+            if (prompt('请输入文章密码') !== 'itismine123'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+ 
 
 
 
@@ -131,7 +141,7 @@
 <meta property="og:site_name" content="GoAway&#39;s Blog">
 <meta property="og:description" content="题意有$N (1 \le N \le 10000)$个点，$M(1 \le M \le 50000)$条边的无向图。可以使$K$条边的边权变成0，求点$1$到点$N$的最短距离。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-03T15:27:06.208Z">
+<meta property="og:updated_time" content="2018-01-02T17:16:57.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="USACO09FEB改造路Revamping Trails">
 <meta name="twitter:description" content="题意有$N (1 \le N \le 10000)$个点，$M(1 \le M \le 50000)$条边的无向图。可以使$K$条边的边权变成0，求点$1$到点$N$的最短距离。">
