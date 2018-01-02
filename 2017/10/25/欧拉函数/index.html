@@ -123,18 +123,18 @@
 
 
 
-<meta name="description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。$$ \phi(x) = \sum_{i=1}^{n}[(x,i)=1] $$">
+<meta name="description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum\_{i=1}^{n}[(x,i)=1]">
 <meta name="keywords" content="数学,欧拉函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="欧拉函数">
 <meta property="og:url" content="http://blog.csdn.net/wt_cnyali/2017/10/25/欧拉函数/index.html">
 <meta property="og:site_name" content="GoAway&#39;s Blog">
-<meta property="og:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。$$ \phi(x) = \sum_{i=1}^{n}[(x,i)=1] $$">
+<meta property="og:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum\_{i=1}^{n}[(x,i)=1]">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-10-26T15:03:17.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="欧拉函数">
-<meta name="twitter:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。$$ \phi(x) = \sum_{i=1}^{n}[(x,i)=1] $$">
+<meta name="twitter:description" content="一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。 \phi(x) = \sum\_{i=1}^{n}[(x,i)=1]">
 
 
 
@@ -344,13 +344,28 @@
       
 
       
-        <p>一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。<br>$$ \phi(x) = \sum_{i=1}^{n}[(x,i)=1] $$</p>
-<a id="more"></a>
+        <p>一个数的欧拉函数，是指小于这个数且与这个数互质的数的总数。</p>
+<script type="math/tex; mode=display">\phi(x) = \sum\_{i=1}^{n}[(x,i)=1]</script><a id="more"></a>
 <h1 id="欧拉函数的计算"><a href="#欧拉函数的计算" class="headerlink" title="欧拉函数的计算"></a>欧拉函数的计算</h1><ul>
 <li>若$x$是质数，$\phi(x) = x-1$</li>
 <li>进一步，若$x = a^p$ ( $a$是质数)<br>不难发现，如果某数不包含$a$这个质因子，那么一定与$x$互质，而$\forall a^i \ (1 \le i \lt p)$都包含$a$，减去即可。$\phi(x) = a^p-a^{p-1} = a^p(1-\frac{1}{a})$</li>
-<li><p>进而，设$x = \sum_{i=1}^{m}{p_i^{a_i}}$，由于欧拉函数是积性函数(在后面给出证明)，所以得出计算式<br>$$<br>\begin{equation}<br>\phi(x) = \quad<br>\Pi_{i=1}^{m}{\phi(p_i^{a_i})} = \quad<br>\Pi_{i=1}^{m}{p_i^{a_i} \times (1-\frac{1}{p_i})} = \quad<br>x \ \Pi_{i=1}^{m}{1-\frac{1}{p_i}}<br>\end{equation}<br>$$</p>
-<h1 id="欧拉函数是积性函数"><a href="#欧拉函数是积性函数" class="headerlink" title="欧拉函数是积性函数"></a>欧拉函数是积性函数</h1><p>已知$(n,m)=1$，求证$\phi(nm)=\phi(n) \times \phi(m)$<br>不妨绘制一张如下的表格<br>$$<br>\begin{matrix}<br>1 &amp; 2 &amp; \cdots &amp; r &amp; \cdots &amp; m \\<br>m+1 &amp; m+2 &amp; \cdots &amp; m+r &amp; \cdots &amp; 2*m \\<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>(n-t)m+1 &amp; (n-t)m+2 &amp; \cdots &amp; (n-t)m+r &amp; \cdots &amp; (n-t+1)m \\<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\<br>(n-1)m+1 &amp; (n-1)m+2 &amp; \cdots &amp; (n-1)m+r &amp; \cdots &amp; nm \\<br>\end{matrix}<br>$$<br>求这张表格里与$nm$互质的数的个数。<br>不难发现，每一行对$m$取模的结果构成了$0$ ~ $m-1$的一个排列，每一列对$n$取模的结果构成了$0$ ~ $n-1$的一个排列。<br>所以，与$nm$互质的数只存在于共$\phi(m)$行模$m$余数与$m$互质的行里，且在共$\phi(n)$列模$n$余数与$n$互质的列里。<br>共$\phi(n) \times \phi(m)$个数。</p>
+<li><p>进而，设$x = \sum_{i=1}^{m}{p_i^{a_i}}$，由于欧拉函数是积性函数(在后面给出证明)，所以得出计算式</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\phi(x) = \quad
+\Pi_{i=1}^{m}{\phi(p\_i^{a\_i})} = \quad
+\Pi_{i=1}^{m}{p\_i^{a\_i} \times (1-\frac{1}{p\_i})} = \quad
+x \\ \Pi_{i=1}^{m}{1-\frac{1}{p\_i}}
+\end{equation}</script><h1 id="欧拉函数是积性函数"><a href="#欧拉函数是积性函数" class="headerlink" title="欧拉函数是积性函数"></a>欧拉函数是积性函数</h1><p>已知$(n,m)=1$，求证$\phi(nm)=\phi(n) \times \phi(m)$<br>不妨绘制一张如下的表格</p>
+<script type="math/tex; mode=display">
+\begin{matrix}
+1 & 2 & \cdots & r & \cdots & m \\\\
+m+1 & m+2 & \cdots & m+r & \cdots & 2*m \\\\
+\cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\\\
+(n-t)m+1 & (n-t)m+2 & \cdots & (n-t)m+r & \cdots & (n-t+1)m \\\\
+\cdots & \cdots & \cdots & \cdots & \cdots & \cdots \\\\
+(n-1)m+1 & (n-1)m+2 & \cdots & (n-1)m+r & \cdots & nm \\\\
+\end{matrix}</script><p>求这张表格里与$nm$互质的数的个数。<br>不难发现，每一行对$m$取模的结果构成了$0$ ~ $m-1$的一个排列，每一列对$n$取模的结果构成了$0$ ~ $n-1$的一个排列。<br>所以，与$nm$互质的数只存在于共$\phi(m)$行模$m$余数与$m$互质的行里，且在共$\phi(n)$列模$n$余数与$n$互质的列里。<br>共$\phi(n) \times \phi(m)$个数。</p>
 </li>
 </ul>
 <p>线性筛欧拉函数的代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> n, m, cnt, phi[maxn], pr[maxn] ;</div><div class="line"><span class="keyword">bool</span> isp[maxn] ;</div><div class="line"><span class="keyword">void</span> _init() &#123;</div><div class="line">    <span class="keyword">int</span> i, j ;</div><div class="line">    <span class="built_in">memset</span> ( isp, <span class="number">1</span>, <span class="keyword">sizeof</span> isp ) ;</div><div class="line">    isp[<span class="number">1</span>] = <span class="number">0</span> ;</div><div class="line">    phi[<span class="number">1</span>] = <span class="number">1</span> ;</div><div class="line">    <span class="keyword">for</span> ( i = <span class="number">2</span> ; i &lt; maxn ; i ++ ) &#123;</div><div class="line">        <span class="keyword">if</span> (isp[i]) &#123;</div><div class="line">            phi[i] = i<span class="number">-1</span> ;</div><div class="line">            pr[++cnt] = i ;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span> ( j = <span class="number">1</span> ; j &lt;= cnt &amp;&amp; pr[j]*i &lt; maxn ; j ++ ) &#123;</div><div class="line">            isp[i*pr[j]] = <span class="number">0</span> ;</div><div class="line">            <span class="keyword">if</span> (i%pr[j]) phi[i*pr[j]] = phi[i]*phi[pr[j]] ;</div><div class="line">            <span class="keyword">else</span> &#123;</div><div class="line">                phi[i*pr[j]] = phi[i]*pr[j] ;</div><div class="line">                <span class="keyword">break</span> ; </div><div class="line">            &#125; </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -473,7 +488,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -541,7 +556,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

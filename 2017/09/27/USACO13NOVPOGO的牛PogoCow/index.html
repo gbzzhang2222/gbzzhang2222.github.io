@@ -355,7 +355,7 @@
 <li><p>Solution</p>
 <ul>
 <li>首先$O(N^3)$的DP还是很好想的。而且还有很多种方法。</li>
-<li>列出一种：$f[i][j]$代表当前从第$i$个目标点开始跳，下一个跳到第$j$个目标点的最大得分。$$ f[i][j] = max( f[j][k] + value[i] ) ( \forall k, pos[k]-pos[j] \ge pos[j]-pos[i] ) $$</li>
+<li>列出一种：$f[i][j]$代表当前从第$i$个目标点开始跳，下一个跳到第$j$个目标点的最大得分。<script type="math/tex">f[i][j] = max( f[j][k] + value[i] ) ( \forall k, pos[k]-pos[j] \ge pos[j]-pos[i] )</script></li>
 <li>长者的经验：前（后）缀和思想，然后就可以二分答案了。</li>
 <li>$f[i][j]$代表从第$i$个目标点开始跳，下一个跳到$j$或$j$之后的目标点的最大得分。</li>
 <li>然后就做完了。</li>
@@ -473,7 +473,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -525,7 +525,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
